@@ -1,7 +1,7 @@
 +++
 title = 'Professional Experience'
 date = '2025-05-23T13:12:09+01:00'
-draft = true
+draft = false
 showDate = false
 showReadingTime = false
 keywords = [
