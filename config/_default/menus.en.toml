@@ -21,6 +21,12 @@
   weight = 20
 
 [[main]]
+  name = "Experience"
+  pageRef = 'experience'
+  url = '/experience'
+  weight = 25
+
+[[main]]
   name = "Tags"
   pageRef = "tags"
   weight = 30
