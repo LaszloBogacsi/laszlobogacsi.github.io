@@ -49,7 +49,7 @@ This was tedious.
 Were there any other solutions?
 Surely, but there was always a catch, a paywall, or a marketplace wordpress image that would need paying for.
 
-But then use something else to deploy it.. yeh, been there, show me the free one as soon as it has the word "managed" it'll have a cost attached. Fair enough, I'm paying for hard work of others, nothing wrong with that. But somehow I feel joy when I can avoid it give what I want is dad simple and need not to be complicated.
+But then use something else to deploy it.. yeh, been there, show me the free one as soon as it has the word "managed" it'll have a cost attached. Fair enough, I'm paying for hard work of others, nothing wrong with that. But somehow I feel joy when I can avoid it given what I want is dead simple and need not to be complicated.
 
 Looked at other technologies, strapi, ghost, and other CMS systems, which are great, if I want the job of developing my site instead of writing content for it.
 
@@ -106,7 +106,7 @@ If you haven't worked with git or git submodules much it'll be confusing. Sure I
 
 So while you figured out how to clone a remote repo to local, and you learned to commit and push, or you might have an actual answer to the question above, good on you, otherwise, grabbing the theme as a go module might seem a little less complex.
 
-To set that up, just
+To set that up, just (assuming you have go installed)
 
 ```shell
 go mod init
@@ -136,7 +136,7 @@ and when there is an update, or you want to switch themes, just `go get` it.
 
 ### 2. Adding style to things
 
-The theme I'm using uses Tailwind, so to add something extra like let's say you'd want to control the width of an element, just add a tailwing class to the element like this:
+The theme I'm using uses Tailwind, so to add something extra like let's say you'd want to control the width of an element, just add a Tailwind css class to the element like this:
 ```
 class="w-24"
 ```
@@ -144,26 +144,28 @@ class="w-24"
 
 In markdown you can also use html tags it'll be understood by most of the markdown engines. But you see you're a programmer now, and for some reason not being idiomatic is frowned upon, because.. well, because you can it doesn't always mean you should.
 
-So you know adding an image in markkdown is `![](path/to/image.jpg)` but nowhere to put your class if you want a different size image.
+So you know adding an image in markdown is `![](path/to/image.jpg)` but nowhere to put your class if you want a different size image.
 
 Of course you could just add `<img src="path/to/image.jpg" class="some-class-name" width=50% alt="always add alt.. please" />` but now we know this is only for the dark side.
 
 If you want to stay on the right side of the force and not risk being ostracised by people you don't know, be idiomatic and use Hugo shorthands for images, a `figure` block
 
-```md
-{{< figure src="path/to/image.png" alt="Description of the image" class="w-24" >}}
-```
+
+`{{ < figure src="path/to/image.png" alt="Description of the image" class="w-24" > }}`
+
+Note the syntax above is a bit broken because hugo just kept wanting to interpret the block.. sry for that.
+
 
 ### 3. Post hero images and crediting
 
-Perhaps it wasn'tobvious onbly for me. I blame old age and worsened eyesight :) 
-This will likely be different from theme to theme. The theme I'm using likes some naming convention, so if you kindly prefix your chosen featured image with `feature-` it'll just automagically pop to the top of your post, and it'll use it in list view too.
+Perhaps it wasn't obvious only for me. I blame old age and worsened eyesight.
+This will likely be different from theme to theme. The theme I'm using likes some naming conventions, so if you kindly prefix your chosen featured image with `feature-` it'll just automagically pop to the top of your post, and it'll use it as thumbnail in list view too.
 
 We all know that you did not take that photo, and did not create that image.. probably.. likely.. so go ahead and credit the lovely person who made it available for you problably for free on unsplash.. or just thank chatgpt, midjourney or whatever you used to mush some pixels together.
 
-To do this you can add some metadata to your `Front Matter`. This is the section at the top of each `.md` file you create between the `---` markers
+To do this you can add some metadata to your `Front Matter`. This is the section at the top of each `.md` file you create between two sets of `---` markers.
 
-My theme supports some extra meta tags, to add an image caption you can add `coverCaption` and add your credit there.
+My theme supports some extra meta tags, to add an image caption you can add `coverCaption:` and add your credit there.
 
 ### 4. Draft
 
